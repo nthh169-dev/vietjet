@@ -7,3 +7,6 @@
 Đây là branch task 1
 Đây là branch task 1
 Đây là branch task 1
+Đây là branch task 2
+Đây là branch task 2
+Đây là branch task 2
