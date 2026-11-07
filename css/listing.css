@@ -1,0 +1,482 @@
+/* ==========================================================================
+   VIETJET TRAVEL — LISTING PAGES (flights.html & tours.html)
+   Layout 2 cột: Bên trái Filter Sidebar | Bên phải Danh sách kết quả
+   ========================================================================== */
+
+.page-hero-compact {
+  background: linear-gradient(120deg, #fff1f2 0%, #ffffff 65%, #fffbeb 100%);
+  border-bottom: 1px solid var(--border-color);
+  padding: 28px 0;
+}
+
+.page-hero-compact h1 {
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: var(--text-primary);
+}
+
+.page-hero-compact p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-top: 4px;
+}
+
+/* Quick Route Bar on Flights */
+.quick-route-bar {
+  margin-top: 18px;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.9fr auto;
+  gap: 12px;
+  align-items: end;
+  box-shadow: var(--shadow-xs);
+}
+
+/* Two-Column Listing Layout */
+.listing-layout {
+  display: grid;
+  grid-template-columns: 295px 1fr;
+  gap: 28px;
+  padding: 32px 0 48px;
+  align-items: start;
+}
+
+/* Left Filter Sidebar */
+.filter-sidebar {
+  position: sticky;
+  top: calc(var(--header-height) + 18px);
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.filter-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--bg-subtle);
+  margin-bottom: 16px;
+}
+
+.filter-header h2 {
+  font-size: 1.06rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.reset-filter-btn {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  font-size: 0.84rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.reset-filter-btn:hover {
+  text-decoration: underline;
+}
+
+.filter-group {
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.filter-group:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.filter-group-title {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.filter-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filter-check-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 5px 8px;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition), color var(--transition);
+}
+
+.filter-check-label:hover {
+  background: var(--bg-light);
+  color: var(--text-primary);
+}
+
+.filter-check-label input {
+  accent-color: var(--color-primary);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.time-slot-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.time-chip {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 6px;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  text-align: center;
+  transition: all var(--transition);
+  background: #ffffff;
+}
+
+.time-chip input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.time-chip .slot-name {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.time-chip .slot-hours {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.time-chip.checked {
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+}
+
+.time-chip.checked .slot-hours,
+.time-chip.checked .slot-name {
+  color: var(--color-primary);
+}
+
+/* Right Results Area */
+.results-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.results-count {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.results-count strong {
+  color: var(--color-primary);
+}
+
+.cards-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Flight Card */
+.flight-item-card {
+  background: #ffffff;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 20px 22px;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.flight-item-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.flight-card-main {
+  display: grid;
+  grid-template-columns: 180px 1fr 200px;
+  gap: 20px;
+  align-items: center;
+}
+
+.flight-airline-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.flight-airline-logo {
+  height: 38px;
+  width: auto;
+  max-width: 120px;
+  border-radius: 6px;
+}
+
+.flight-airline-name {
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+.flight-code-meta {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.flight-schedule-col {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 0 10px;
+}
+
+.flight-endpoint {
+  text-align: center;
+  min-width: 90px;
+}
+
+.flight-time-big {
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+.flight-city-code {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+.flight-duration-track {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.duration-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.track-line {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background: var(--border-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.track-plane {
+  background: #ffffff;
+  padding: 0 6px;
+  color: var(--color-primary);
+  font-size: 1rem;
+}
+
+.flight-date-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.flight-price-col {
+  text-align: right;
+  border-left: 1px dashed var(--border-color);
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.price-class-caption {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.flight-price-value {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--color-primary);
+}
+
+.flight-card-bottom {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--bg-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 0.83rem;
+  color: var(--text-secondary);
+}
+
+.service-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.service-chip {
+  background: var(--bg-light);
+  border: 1px solid var(--border-color);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+/* Tour Horizontal Listing Card */
+.tour-list-card {
+  background: #ffffff;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.tour-list-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.tour-list-card.highlighted-tour {
+  border: 2px solid var(--color-primary);
+  background: linear-gradient(90deg, #fff9f9 0%, #ffffff 45%);
+  box-shadow: var(--shadow-lg);
+}
+
+.tour-list-thumb {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 210px;
+  background: var(--bg-subtle);
+}
+
+.tour-list-thumb img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.tour-list-content {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.tour-list-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 6px 0 10px;
+}
+
+.tour-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px 16px;
+  font-size: 0.87rem;
+  color: var(--text-secondary);
+}
+
+.tour-list-bottom {
+  padding-top: 14px;
+  border-top: 1px dashed var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 992px) {
+  .listing-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-sidebar {
+    position: static;
+  }
+
+  .quick-route-bar {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .flight-card-main {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .flight-airline-col {
+    align-items: center;
+  }
+
+  .flight-price-col {
+    border-left: none;
+    border-top: 1px dashed var(--border-color);
+    padding-left: 0;
+    padding-top: 14px;
+    align-items: center;
+  }
+
+  .tour-list-card {
+    grid-template-columns: 1fr;
+  }
+}

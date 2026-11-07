@@ -1,0 +1,58 @@
+/* ==========================================================================
+   VIETJET TRAVEL & AIRLINES — DESIGN TOKENS (UI_UX_DESIGN.md)
+   Theme: Light Mode, Nền trắng (#FFFFFF), Chủ đạo Đỏ Vietjet (#EE1D23)
+   ========================================================================== */
+
+:root {
+  /* Brand Colors */
+  --color-primary: #ee1d23;
+  --color-primary-dark: #c81016;
+  --color-primary-light: #fff1f2;
+  --color-primary-border: #fecdd3;
+
+  /* Accent Colors (Gold / SkyBoss Business) */
+  --color-accent: #ffb800;
+  --color-accent-dark: #d97706;
+  --color-accent-light: #fffbeb;
+  --color-accent-border: #fde68a;
+
+  /* Backgrounds (Light Theme) */
+  --bg-white: #ffffff;
+  --bg-light: #f8f9fa;
+  --bg-subtle: #f1f5f9;
+
+  /* Text Colors */
+  --text-primary: #1a1a2e;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+
+  /* Borders & Dividers */
+  --border-color: #e2e8f0;
+  --border-hover: #cbd5e1;
+
+  /* Semantic Status Colors */
+  --color-success: #16a34a;
+  --color-success-light: #dcfce7;
+  --color-info: #0284c7;
+  --color-info-light: #e0f2fe;
+  --color-danger: #dc2626;
+
+  /* Shadows */
+  --shadow-xs: 0 1px 3px rgba(15, 23, 42, 0.05);
+  --shadow-sm: 0 4px 12px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 16px 36px rgba(238, 29, 35, 0.12);
+
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+  --radius-pill: 999px;
+
+  /* Layout & Typography */
+  --container-max: 1240px;
+  --header-height: 76px;
+  --font-sans: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --transition: 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}

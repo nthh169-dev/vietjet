@@ -1,0 +1,426 @@
+/* ==========================================================================
+   VIETJET TRAVEL — DETAIL PAGES (flight-detail.html & tour-detail.html)
+   ========================================================================== */
+
+.detail-section {
+  padding: 36px 0 60px;
+}
+
+/* Flight Detail Overview Card */
+.flight-summary-hero {
+  background: #ffffff;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 32px;
+}
+
+.flight-summary-banner {
+  background: linear-gradient(120deg, #ee1d23 0%, #b91c1c 65%, #7f1d1d 100%);
+  color: #ffffff;
+  padding: 24px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.flight-summary-banner h1 {
+  font-size: 1.55rem;
+  font-weight: 900;
+}
+
+.flight-summary-body {
+  padding: 28px 30px;
+  display: grid;
+  grid-template-columns: 1.35fr 0.65fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.flight-route-visual {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  background: var(--bg-light);
+  padding: 22px 24px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  margin-bottom: 20px;
+}
+
+.route-point h3 {
+  font-size: 1.85rem;
+  font-weight: 900;
+  color: var(--color-primary);
+}
+
+.route-point p {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.flight-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.spec-box {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+}
+
+.spec-label {
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.spec-value {
+  font-size: 0.96rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-top: 3px;
+}
+
+.aircraft-showcase {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  background: var(--bg-light);
+}
+
+.aircraft-showcase img {
+  width: 100%;
+  height: 185px;
+  object-fit: cover;
+}
+
+.aircraft-caption {
+  padding: 12px 16px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* --------------------------------------------------------------------------
+   2 Fare Class Selection Cards: Hạng Phổ Thông vs Hạng Thương Gia
+   -------------------------------------------------------------------------- */
+.fare-classes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.fare-card {
+  position: relative;
+  background: #ffffff;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+}
+
+.fare-card:hover {
+  border-color: var(--color-primary-border);
+  transform: translateY(-3px);
+}
+
+.fare-card.selected {
+  border-color: var(--color-primary);
+  background-color: #fffafa;
+  box-shadow: 0 12px 32px rgba(238, 29, 35, 0.16);
+}
+
+.fare-card-head {
+  padding: 22px 24px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.fare-card-economy .fare-card-head {
+  background: linear-gradient(135deg, #fff1f2 0%, #ffffff 100%);
+}
+
+.fare-card-business .fare-card-head {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+}
+
+.fare-name {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: var(--text-primary);
+}
+
+.fare-sub {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.fare-price-box {
+  padding: 20px 24px 12px;
+}
+
+.fare-price-amount {
+  font-size: 1.85rem;
+  font-weight: 900;
+  color: var(--color-primary);
+}
+
+.fare-perks-list {
+  list-style: none;
+  padding: 8px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  flex: 1;
+}
+
+.fare-perks-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+}
+
+.perk-check {
+  color: var(--color-success);
+  font-weight: 900;
+}
+
+.fare-select-indicator {
+  margin: 0 24px 24px;
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  text-align: center;
+  font-weight: 800;
+  border: 1.5px solid var(--border-color);
+  background: #ffffff;
+  color: var(--text-secondary);
+  transition: all var(--transition);
+}
+
+.fare-card.selected .fare-select-indicator {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #ffffff;
+}
+
+/* Action Bar to Add Flight to Cart */
+.booking-confirm-bar {
+  background: #ffffff;
+  border: 1.5px solid var(--color-primary-border);
+  border-radius: var(--radius-lg);
+  padding: 20px 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  box-shadow: var(--shadow-md);
+}
+
+.qty-stepper {
+  display: inline-flex;
+  align-items: center;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.qty-stepper button {
+  width: 38px;
+  height: 38px;
+  border: none;
+  background: var(--bg-light);
+  font-weight: 900;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: var(--text-primary);
+}
+
+.qty-stepper button:hover {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.qty-stepper span {
+  min-width: 44px;
+  text-align: center;
+  font-weight: 800;
+}
+
+/* --------------------------------------------------------------------------
+   Tour Detail Layout & Itinerary Timeline
+   -------------------------------------------------------------------------- */
+.tour-detail-layout {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 30px;
+  align-items: start;
+}
+
+.tour-hero-photo {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 24px;
+  border: 1px solid var(--border-color);
+}
+
+.tour-hero-photo img {
+  width: 100%;
+  aspect-ratio: 600 / 400;
+  max-height: 440px;
+  object-fit: cover;
+}
+
+.detail-card-block {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 24px 26px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-xs);
+}
+
+.detail-card-block h2 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--bg-subtle);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Timeline Lịch trình chuyến đi */
+.itinerary-timeline {
+  position: relative;
+  padding-left: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.itinerary-timeline::before {
+  content: '';
+  position: absolute;
+  left: 9px;
+  top: 8px;
+  bottom: 8px;
+  width: 2.5px;
+  background: var(--color-primary-border);
+}
+
+.timeline-day {
+  position: relative;
+  background: var(--bg-light);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -28px;
+  top: 18px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  border: 4px solid #ffffff;
+  box-shadow: 0 0 0 2px var(--color-primary);
+}
+
+.timeline-day-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.timeline-day-title {
+  font-size: 1.02rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.timeline-day-desc {
+  font-size: 0.93rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+/* Sticky Tour Booking Box */
+.tour-booking-sidebar {
+  position: sticky;
+  top: calc(var(--header-height) + 18px);
+  background: #ffffff;
+  border: 2px solid var(--color-primary-border);
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  box-shadow: var(--shadow-md);
+}
+
+.sidebar-price-big {
+  font-size: 1.9rem;
+  font-weight: 900;
+  color: var(--color-primary);
+  margin: 6px 0 16px;
+}
+
+.sidebar-summary-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px 0;
+  border-top: 1px dashed var(--border-color);
+  border-bottom: 1px dashed var(--border-color);
+  margin-bottom: 18px;
+  font-size: 0.9rem;
+}
+
+.sidebar-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+@media (max-width: 960px) {
+  .flight-summary-body,
+  .fare-classes-grid,
+  .tour-detail-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .flight-specs-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .tour-booking-sidebar {
+    position: static;
+  }
+}

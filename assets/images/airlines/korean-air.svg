@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" width="240" height="80">
+  <rect width="240" height="80" rx="12" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="2"/>
+  <g transform="translate(36,40)">
+    <circle cx="0" cy="0" r="17" fill="#0284C7"/>
+    <path d="M-17 0 A17 17 0 0 1 17 0 A8.5 8.5 0 0 1 0 0 A8.5 8.5 0 0 0 -17 0 Z" fill="#DC2626"/>
+    <path d="M-17 0 L17 0" stroke="#FFFFFF" stroke-width="2"/>
+  </g>
+  <text x="66" y="38" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="19" fill="#0C4A6E" letter-spacing="0.8">KOREAN</text>
+  <text x="66" y="58" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="19" fill="#DC2626" letter-spacing="1.5">AIR</text>
+</svg>

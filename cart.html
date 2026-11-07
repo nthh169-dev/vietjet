@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Giỏ Hàng &amp; Đăng Ký Đặt Chỗ — Vietjet Travel</title>
+  <link rel="icon" type="image/jpeg" href="images/2aOboRAvPCnNF8ux8l12JJoKC6uw9yMZkM5dUYs4.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/detail.css" />
+  <link rel="stylesheet" href="css/cart.css" />
+</head>
+<body>
+  <div id="site-header-root"></div>
+
+  <div class="breadcrumb-bar">
+    <div class="container breadcrumb">
+      <a href="index.html">Trang chủ</a>
+      <span>/</span>
+      <span class="current">Giỏ hàng &amp; Đăng ký đặt chỗ</span>
+    </div>
+  </div>
+
+  <section class="page-hero-compact" style="background: linear-gradient(120deg, #fff1f2 0%, #ffffff 70%); border-bottom: 1px solid var(--border-color); padding: 26px 0;">
+    <div class="container">
+      <h1 style="font-size: 1.75rem; font-weight: 900;">🛒 Giỏ Hàng Của Bạn</h1>
+      <p style="color: var(--text-secondary); margin-top: 4px;">
+        Kiểm tra các chuyến bay &amp; tour đã chọn, nhập thông tin cá nhân và đăng ký để nhận Email xác nhận
+      </p>
+    </div>
+  </section>
+
+  <main class="container cart-page-section">
+    <div class="cart-layout">
+      <!-- CỘT TRÁI: DANH SÁCH CHUYẾN BAY & TOUR ĐÃ CHỌN -->
+      <section class="cart-panel">
+        <div class="cart-panel-header">
+          <h2>Danh Sách Chuyến Bay &amp; Tour Đã Chọn</h2>
+          <button type="button" class="btn btn-ghost btn-sm" id="btn-clear-cart" style="color: var(--color-danger);">
+            🗑 Xóa toàn bộ giỏ hàng
+          </button>
+        </div>
+
+        <div class="cart-items-list" id="cart-items-container">
+          <div class="loading-box">
+            <div class="spinner"></div>
+            <p>Đang tải dữ liệu giỏ hàng từ SQLite...</p>
+          </div>
+        </div>
+
+        <div id="cart-total-summary"></div>
+      </section>
+
+      <!-- CỘT PHẢI: NHẬP THÔNG TIN CÁ NHÂN & ĐĂNG KÝ -->
+      <aside class="cart-panel">
+        <div class="cart-panel-header">
+          <h2>Thông Tin Cá Nhân &amp; Đăng Ký</h2>
+        </div>
+
+        <form class="checkout-form" id="cart-checkout-form">
+          <div class="form-field">
+            <label for="cust-name">Họ và tên khách hàng <span class="req">*</span></label>
+            <input type="text" id="cust-name" class="form-input" placeholder="Ví dụ: Nguyễn Văn An" required />
+          </div>
+
+          <div class="form-field">
+            <label for="cust-phone">Số điện thoại liên hệ <span class="req">*</span></label>
+            <input type="tel" id="cust-phone" class="form-input" placeholder="Ví dụ: 0909123456" required />
+          </div>
+
+          <div class="form-field">
+            <label for="cust-email">Email nhận xác nhận <span class="req">*</span></label>
+            <input type="email" id="cust-email" class="form-input" placeholder="Ví dụ: khachhang@gmail.com" required />
+          </div>
+
+          <div class="form-field">
+            <label for="cust-note">Ghi chú / Yêu cầu đặc biệt</label>
+            <textarea id="cust-note" class="form-textarea" rows="3" placeholder="Suất ăn chay, hỗ trợ xe lăn, xuất hóa đơn VAT..."></textarea>
+          </div>
+
+          <div class="sender-notice">
+            ✉️ Sau khi nhấn <strong>Đăng ký</strong>, một email xác nhận đặt chỗ sẽ được gửi từ
+            <strong>nvhai061993@gmail.com</strong> đến địa chỉ email của quý khách.
+          </div>
+
+          <details class="emailjs-config-details">
+            <summary>⚙️ Tùy chọn cấu hình EmailJS API Key (Gửi Gmail trực tiếp)</summary>
+            <div class="emailjs-config-grid">
+              <p style="color: var(--text-muted); font-size: 0.78rem;">
+                Điền khóa từ tài khoản EmailJS đã liên kết với <code>nvhai061993@gmail.com</code> (nếu để trống, hệ thống tự động chạy chế độ xác nhận &amp; hiển thị bản xem trước thư).
+              </p>
+              <input type="text" id="cfg-public-key" class="form-input" placeholder="EmailJS Public Key" style="padding: 8px 10px; font-size: 0.85rem;" />
+              <input type="text" id="cfg-service-id" class="form-input" placeholder="EmailJS Service ID (Gmail nvhai061993@gmail.com)" style="padding: 8px 10px; font-size: 0.85rem;" />
+              <input type="text" id="cfg-template-id" class="form-input" placeholder="EmailJS Template ID" style="padding: 8px 10px; font-size: 0.85rem;" />
+              <button type="button" class="btn btn-outline btn-sm" id="btn-save-emailjs-cfg">Lưu cấu hình EmailJS</button>
+            </div>
+          </details>
+
+          <button type="submit" class="btn btn-primary btn-lg" id="btn-submit-booking" style="width: 100%; margin-top: 6px;">
+            ✓ Đăng Ký &amp; Nhận Email Xác Nhận
+          </button>
+        </form>
+      </aside>
+    </div>
+  </main>
+
+  <!-- MODAL THÔNG BÁO HOÀN THÀNH -->
+  <div class="modal-backdrop" id="booking-success-modal" role="dialog" aria-modal="true">
+    <div class="modal-dialog" id="booking-success-body"></div>
+  </div>
+
+  <div id="site-footer-root"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/sql-wasm.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="js/vietjet-db-inline.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/email-service.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>

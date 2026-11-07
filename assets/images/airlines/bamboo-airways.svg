@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" width="240" height="80">
+  <rect width="240" height="80" rx="12" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="2"/>
+  <g transform="translate(20,18)">
+    <path d="M6 38 L22 8 L28 12 L16 38 Z" fill="#16A34A"/>
+    <path d="M18 38 L32 16 L38 20 L28 38 Z" fill="#0284C7"/>
+    <circle cx="25" cy="6" r="3.5" fill="#16A34A"/>
+  </g>
+  <text x="68" y="38" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="20" fill="#15803D">BAMBOO</text>
+  <text x="68" y="57" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="15" fill="#0369A1" letter-spacing="2">AIRWAYS</text>
+</svg>

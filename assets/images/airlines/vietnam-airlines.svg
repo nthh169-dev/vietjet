@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" width="240" height="80">
+  <rect width="240" height="80" rx="12" fill="#005983"/>
+  <g transform="translate(34,40)">
+    <ellipse cx="0" cy="-12" rx="5" ry="12" fill="#EAB308"/>
+    <ellipse cx="10" cy="-8" rx="5" ry="11" transform="rotate(35 10 -8)" fill="#EAB308"/>
+    <ellipse cx="-10" cy="-8" rx="5" ry="11" transform="rotate(-35 -10 -8)" fill="#EAB308"/>
+    <ellipse cx="14" cy="2" rx="4.5" ry="10" transform="rotate(70 14 2)" fill="#EAB308"/>
+    <ellipse cx="-14" cy="2" rx="4.5" ry="10" transform="rotate(-70 -14 2)" fill="#EAB308"/>
+    <path d="M-12 10 Q0 18 12 10 Q0 14 -12 10 Z" fill="#FDE047"/>
+  </g>
+  <text x="64" y="38" font-family="Georgia, serif" font-weight="700" font-size="19" fill="#FFFFFF">Vietnam</text>
+  <text x="64" y="58" font-family="Georgia, serif" font-weight="700" font-size="19" fill="#FDE047">Airlines</text>
+</svg>

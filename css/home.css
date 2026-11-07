@@ -1,0 +1,424 @@
+/* ==========================================================================
+   VIETJET TRAVEL — TRANG CHỦ (index.html)
+   ========================================================================== */
+
+/* Hero Banner & Search Widget */
+.hero-section {
+  position: relative;
+  background: linear-gradient(135deg, #fff5f5 0%, #ffffff 55%, #fffbeb 100%);
+  padding: 40px 0 64px;
+  border-bottom: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.hero-top-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 36px;
+  margin-bottom: 32px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border: 1px solid var(--color-primary-border);
+  color: var(--color-primary);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+  font-weight: 800;
+  margin-bottom: 14px;
+  box-shadow: var(--shadow-xs);
+}
+
+.hero-heading {
+  font-size: 2.55rem;
+  line-height: 1.18;
+  font-weight: 900;
+  color: var(--text-primary);
+  letter-spacing: -0.8px;
+  margin-bottom: 14px;
+}
+
+.hero-heading span {
+  color: var(--color-primary);
+}
+
+.hero-lead {
+  font-size: 1.04rem;
+  color: var(--text-secondary);
+  max-width: 560px;
+}
+
+.hero-visual {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 4px solid #ffffff;
+}
+
+.hero-visual img {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+}
+
+.hero-visual-tag {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  background: rgba(238, 29, 35, 0.92);
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 0.82rem;
+}
+
+/* Search Box */
+.search-card {
+  background: #ffffff;
+  border-radius: var(--radius-xl);
+  padding: 26px 28px;
+  box-shadow: 0 14px 40px rgba(238, 29, 35, 0.1), 0 2px 10px rgba(15, 23, 42, 0.05);
+  border: 1.5px solid var(--color-primary-border);
+}
+
+.search-trip-tabs {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.trip-radio-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--border-color);
+  background: var(--bg-light);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.trip-radio-pill input {
+  accent-color: var(--color-primary);
+  width: 16px;
+  height: 16px;
+}
+
+.trip-radio-pill.active {
+  background: var(--color-primary-light);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.search-fields-grid {
+  display: grid;
+  grid-template-columns: 1.2fr auto 1.2fr 0.95fr 0.95fr auto;
+  gap: 12px;
+  align-items: end;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.field-control {
+  width: 100%;
+  height: 48px;
+  padding: 0 14px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border-color);
+  background: #ffffff;
+  color: var(--text-primary);
+  font-weight: 600;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.field-control:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(238, 29, 35, 0.12);
+}
+
+.field-control:disabled {
+  background: var(--bg-subtle);
+  color: var(--text-muted);
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.swap-route-btn {
+  width: 44px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border-color);
+  background: var(--bg-light);
+  color: var(--color-primary);
+  font-size: 1.15rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.swap-route-btn:hover {
+  background: var(--color-primary-light);
+  border-color: var(--color-primary);
+  transform: rotate(180deg);
+}
+
+.search-submit-btn {
+  height: 48px;
+  padding: 0 28px;
+  font-size: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   8 Featured Tours Grid (Thumbnail 600x400)
+   -------------------------------------------------------------------------- */
+.featured-tours-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.tour-card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.tour-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary-border);
+}
+
+.tour-thumb-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 600 / 400;
+  overflow: hidden;
+  background: var(--bg-subtle);
+}
+
+.tour-thumb-wrap img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.tour-card:hover .tour-thumb-wrap img {
+  transform: scale(1.06);
+}
+
+.tour-duration-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--color-primary);
+  color: #ffffff;
+  padding: 5px 11px;
+  border-radius: var(--radius-pill);
+  font-size: 0.76rem;
+  font-weight: 800;
+  box-shadow: 0 4px 10px rgba(238, 29, 35, 0.35);
+}
+
+.tour-airline-tag {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--text-primary);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.tour-card-body {
+  padding: 16px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.tour-agency {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tour-card-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.42;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+
+.tour-card-footer {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px dashed var(--border-color);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.tour-price {
+  font-size: 1.18rem;
+  font-weight: 900;
+  color: var(--color-primary);
+}
+
+.tour-price-unit {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.tour-go-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* --------------------------------------------------------------------------
+   Partner Airlines Grid
+   -------------------------------------------------------------------------- */
+.airlines-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 18px;
+}
+
+.airline-card {
+  background: #ffffff;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all var(--transition);
+  box-shadow: var(--shadow-xs);
+}
+
+.airline-card:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.airline-logo-box {
+  width: 148px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.airline-logo-box img {
+  max-height: 50px;
+  width: auto;
+  border-radius: 8px;
+}
+
+.airline-name {
+  font-weight: 800;
+  font-size: 0.94rem;
+  color: var(--text-primary);
+}
+
+.airline-cta {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  opacity: 0.85;
+}
+
+/* Responsive Home */
+@media (max-width: 1080px) {
+  .search-fields-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .swap-route-btn {
+    display: none;
+  }
+
+  .featured-tours-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .airlines-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-top-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-heading {
+    font-size: 1.95rem;
+  }
+
+  .search-fields-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .airlines-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .featured-tours-grid {
+    grid-template-columns: 1fr;
+  }
+}
